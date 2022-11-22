@@ -1,0 +1,22 @@
+.header {
+    width:100%;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: rgba(82, 65, 65, 0.205);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5vw;
+    color:white;
+    z-index: 100%;
+    box-shadow: 0 1px 5px #000;
+
+}
+
+@media(max-width:1000px){
+    .header{
+        padding-top: 15px;
+        font-size: 6.4vw;
+    }
+}
