@@ -2,13 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SingelContent from "../../singelContent/SingelContent";
 import './Trending.css';
+import CustomePagination from "../../Pagination/CustomePagination"
 
 const Tranding = () => {
   const [content, setContent] = useState([]);
+  const [page,setPage] = useState(1);
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
 
     setContent(data.results);
@@ -16,7 +18,8 @@ const Tranding = () => {
 
   useEffect(() => {
     fetchTrending();
-  },[]);
+    //eslint-disable-next-line
+  },[page]);
 
   return (
     <div>
@@ -35,6 +38,7 @@ const Tranding = () => {
         />
         ))}
       </div>
+      <CustomePagination setPage={setPage}/>
     </div>
   );
 };
