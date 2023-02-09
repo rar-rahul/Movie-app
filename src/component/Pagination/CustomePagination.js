@@ -9,7 +9,15 @@ const CustomePagination = ({setPage,numofpages=10}) => {
     }
 
   return (
-    <div>
+    <div
+    style={{
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      marginTop: 10,
+      color:"#fff"
+    }}
+  >
         <Pagination count={numofpages} onChange={(e) => handlePageCHange(e.target.textContent)}/>
     </div>
   )
